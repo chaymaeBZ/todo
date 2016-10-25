@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :todos
+  resources :todos do
+    collection do
+      get 'json_format'
+    end
+  end
   root 'todos#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

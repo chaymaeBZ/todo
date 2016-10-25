@@ -7,6 +7,10 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
+  def json_format
+    @todos = Todo.all
+    render json: @todos
+  end
   # GET /todos/1
   # GET /todos/1.json
   def show
